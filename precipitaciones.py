@@ -51,4 +51,4 @@ df = df.drop(['fechaobservacion'], axis=1)
 print(df.head(5))
 
 # Guarda el DataFrame como un archivo CSV
-df.to_csv('mi_dataframe_API.csv', index=False)
+df.to_csv('precipitacionesAPI.csv', index=False)
