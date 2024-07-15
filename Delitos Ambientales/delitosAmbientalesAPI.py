@@ -65,7 +65,23 @@ print("-------------------------")
 # Elimina las filas donde el año es menor a 1900
 df = df[df['año'] >= 1900]
 
+# Mapear los meses a su nombre
+meses_map = {
+    1: 'Enero',
+    2: 'Febrero',
+    3: 'Marzo',
+    4: 'Abril',
+    5: 'Mayo',
+    6: 'Junio',
+    7: 'Julio',
+    8: 'Agosto',
+    9: 'Septiembre',
+    10: 'Octubre',
+    11: 'Noviembre',
+    12: 'Diciembre'
+}
+
+df['mes'] = df['mes'].map(meses_map)
+
 # Guarda el DataFrame como un archivo CSV
 df.to_csv('delitosAmbientalesAPI.csv', index=False)
-
-

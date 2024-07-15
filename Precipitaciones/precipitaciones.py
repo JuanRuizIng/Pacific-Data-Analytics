@@ -40,6 +40,24 @@ df['mes'] = df['fechaobservacion'].dt.month
 df['día'] = df['fechaobservacion'].dt.day
 df['hora'] = df['fechaobservacion'].dt.hour
 
+# Mapear los meses a su nombre
+meses_map = {
+    1: 'Enero',
+    2: 'Febrero',
+    3: 'Marzo',
+    4: 'Abril',
+    5: 'Mayo',
+    6: 'Junio',
+    7: 'Julio',
+    8: 'Agosto',
+    9: 'Septiembre',
+    10: 'Octubre',
+    11: 'Noviembre',
+    12: 'Diciembre'
+}
+
+df['mes'] = df['mes'].map(meses_map)
+
 print(df["día"])
 
 print(f"El número de filas es {df.shape[0]}")
