@@ -56,7 +56,19 @@ meses_map = {
     12: 'Diciembre'
 }
 
+df['mesOrden'] = df['mes']
 df['mes'] = df['mes'].map(meses_map)
+
+columnas = list(df.columns)
+
+indice_mes = columnas.index('MES')
+
+# Se remueve "MES_ORDEN" para evitar duplicados si ya existe
+columnas.remove('MES_ORDEN')
+columnas.insert(indice_mes + 1, 'MES_ORDEN')
+
+# Reordena el DataFrame según la nueva lista de columnas
+df = df[columnas]
 
 print(df["día"])
 
