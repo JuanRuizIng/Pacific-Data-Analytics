@@ -37,6 +37,7 @@ df['fechaobservacion'] = pd.to_datetime(df['fechaobservacion'])
 # Crea nuevas columnas para el año, mes, día y hora
 df['año'] = df['fechaobservacion'].dt.year
 df['mes'] = df['fechaobservacion'].dt.month
+df['mesOrden'] = df['fechaobservacion'].dt.month
 df['día'] = df['fechaobservacion'].dt.day
 df['hora'] = df['fechaobservacion'].dt.hour
 
